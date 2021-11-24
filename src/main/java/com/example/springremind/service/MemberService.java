@@ -3,14 +3,18 @@ package com.example.springremind.service;
 import com.example.springremind.domain.Member;
 import com.example.springremind.repository.MemberRepository;
 import com.example.springremind.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberService {
 // command + shift + t - 테스트 만들어줌
     private final MemberRepository memberRepository;
 
+    @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
