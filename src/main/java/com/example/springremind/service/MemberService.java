@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @Transactional
 public class MemberService {
-// command + shift + t - 테스트 만들어줌
+    // command + shift + t - 테스트 만들어줌
     private final MemberRepository memberRepository;
 
 
@@ -23,12 +23,17 @@ public class MemberService {
 
     public Long join(Member member) {
 
-        //command + option + v
-        // controll + t - extract method
+        long start = System.currentTimeMillis();
+
+
         validateDuplicateMember(member);
 
         memberRepository.save(member);
         return member.getId();
+
+        //command + option + v
+        // controll + t - extract method
+
     }
 
     private void validateDuplicateMember(Member member) {
@@ -41,7 +46,11 @@ public class MemberService {
     //전체회원조회
 
     public List<Member> findMembers() {
+        long start = System.currentTimeMillis();
+
         return memberRepository.findAll();
+
+
     }
 
     public Optional<Member> findOne(Long memberId) {

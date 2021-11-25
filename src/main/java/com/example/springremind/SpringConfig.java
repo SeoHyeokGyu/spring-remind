@@ -1,5 +1,6 @@
 package com.example.springremind;
 
+import com.example.springremind.aop.TimeTraceAop;
 import com.example.springremind.repository.*;
 import com.example.springremind.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,5 +23,9 @@ public class SpringConfig {
         return new MemberService(memberRepository);
     }
 
+    @Bean
+    public TimeTraceAop timeTraceAop() {
+        return new TimeTraceAop();
+    }
 
 }
