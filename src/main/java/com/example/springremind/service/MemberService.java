@@ -5,11 +5,12 @@ import com.example.springremind.repository.MemberRepository;
 import com.example.springremind.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
-
+@Transactional
 public class MemberService {
 // command + shift + t - 테스트 만들어줌
     private final MemberRepository memberRepository;
