@@ -1,6 +1,7 @@
 package com.example.springremind;
 
 import com.example.springremind.repository.JdbcMemberRepository;
+import com.example.springremind.repository.JdbcTemplateMemberRepository;
 import com.example.springremind.repository.MemberRepository;
 import com.example.springremind.repository.MemoryMemberRepository;
 import com.example.springremind.service.MemberService;
@@ -27,6 +28,6 @@ public class SpringConfig {
 
     @Bean
     public MemberRepository memberRepository() {
-        return new JdbcMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 }
